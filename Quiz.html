@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Question</title>
+</head>
+<body>
+
+    <!-- Quiz Question -->
+    <div id="Question">What is the capital of France?</div>
+    
+    <!-- User Input -->
+    <input type="text" id="Answer" placeholder="Type your answer here">
+    
+    <!-- Submit Button -->
+    <button id="Submit">Submit</button>
+    
+    <!-- Feedback Message -->
+    <div id="Feedback"></div>
+
+    <script>
+        let submitButton = document.getElementById("Submit");
+        let answerInput = document.getElementById("Answer");  // Fixed typo
+        let FeedbackDiv = document.getElementById("Feedback");  // Fixed typo
+
+        submitButton.addEventListener("click", function () {  // Fixed event name
+            let userAnswer = answerInput.value.trim().toLowerCase();  // Trim spaces & convert to lowercase
+
+            if (userAnswer === "paris") {  // Fixed condition
+                FeedbackDiv.textContent = "Correct!";
+                FeedbackDiv.style.color = "green";  // Add color styling
+            } else {
+                FeedbackDiv.textContent = "Incorrect! The correct answer is Paris.";
+                FeedbackDiv.style.color = "red";  // Add color styling
+            }
+        });
+    </script>
+
+</body>
+</html>
