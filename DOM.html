@@ -1,0 +1,71 @@
+DOM.html   *****Program
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Manipulation</title>
+</head>
+<body>
+
+    <!-- Header Element -->
+    <h1 id="header">Original Header</h1>
+
+    <!-- Paragraphs -->
+    <p class="paragraph">This is a paragraph.</p>
+    <p class="paragraph">Another paragraph.</p>
+
+    <!-- Link -->
+    <a id="Link" href="#">Click me</a>
+
+    <!-- Button -->
+    <button id="button">Click Me</button>
+
+    <!-- Form -->
+    <form id="form">
+        <input type="text" placeholder="Enter something..." required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // Selecting elements by ID
+        let header = document.getElementById("header");
+
+        // Selecting elements by class name
+        let paragraphs = document.getElementsByClassName("paragraph");
+
+        // Selecting elements by tag name
+        let links = document.getElementsByTagName("a");
+
+        // Selecting elements using CSS Selectors
+        let firstParagraph = document.querySelector(".paragraph");
+
+        // Manipulating element properties
+        header.textContent = "New Header Text";
+
+        // Manipulating element attributes
+        let link = document.getElementById("Link");
+        link.href = "https://www.google.com";
+
+        // Manipulating element content
+        firstParagraph.innerHTML = "This is a <strong>bold</strong> paragraph.";
+
+        // Handling events with JavaScript
+        // Adding event listeners to elements
+        let button = document.getElementById("button"); // Ensure the button has an ID
+        button.addEventListener("click", function () {
+            console.log("Button Clicked!");
+        });
+
+        // Handling Form Submissions
+        let form = document.getElementById("form"); // Ensure the form has an ID
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevents the default form submission behavior
+            console.log("Form submitted");
+        });
+    </script>
+
+</body>
+</html>
