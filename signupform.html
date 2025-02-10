@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+</head>
+<body>
+    <form id="signupform">
+        <label for="email">Email: </label>
+        <input type="email" id="email" required>
+        <button type="submit">Sign Up</button>
+    </form>
+    <div id="error"></div>
+    <script>
+        let form = document.getElementById("signupform");
+        let emailInput = document.getElementById("email");
+        let errorDiv = document.getElementById("error");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            let email = emailInput.value;
+            if (validateEmail(email)) {
+                console.log("form submitted successfully");
+            } else {
+                errorDiv.textContent = "Invalid email address";
+            }
+        });
+
+        function validateEmail(email) {
+            let emailRegex = /^[^\s@]+@[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>
