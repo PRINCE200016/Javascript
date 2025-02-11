@@ -16,21 +16,24 @@
         let form = document.getElementById("signupform");
         let emailInput = document.getElementById("email");
         let errorDiv = document.getElementById("error");
-
+    
         form.addEventListener("submit", function(event) {
             event.preventDefault();
             let email = emailInput.value;
             if (validateEmail(email)) {
-                console.log("form submitted successfully");
+                alert("Form submitted successfully: " + email);
+                console.log("Form submitted successfully");
             } else {
                 errorDiv.textContent = "Invalid email address";
+        
             }
         });
-
+    
         function validateEmail(email) {
-            let emailRegex = /^[^\s@]+@[^\s@]+$/;
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
         }
     </script>
+    
 </body>
 </html>

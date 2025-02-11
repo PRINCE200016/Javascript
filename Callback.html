@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Example</title>
+</head>
+<body>
+
+    <script>
+        function fetchData(callback) {
+            setTimeout(function() {
+                let data = "Sample data";
+                callback(data);
+            }, 2000); // Simulate a delay of 2 seconds
+        } 
+        
+        // Calling the fetchData function with a callback
+        fetchData(function(data) {
+            console.log("Data Received:", data);
+            
+            // ✅ Correct way to insert HTML using template literals
+            document.body.innerHTML += `<p><strong>Data Received:</strong> ${data}</p>`;
+        });
+    </script>
+
+</body>
+</html>
